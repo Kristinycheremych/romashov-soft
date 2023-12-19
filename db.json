@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "firstname": "Алина",
+      "email": "alina@gmail.com",
+      "message": "Hello,React",
+      "id": 1
+    },
+    {
+      "firstname": "Кристина",
+      "email": "k.erem.yurievna@gmail.com",
+      "message": "Hello!!!",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+.header_about {
+    max-width: 648px;
+    margin: 0 auto;
+    text-align: center;
+    /* border: 1px solid black; */
+    margin-bottom: 56px;
+}
+
+.container_carusel{
+    max-width: 1332px;
+    margin: 0 auto;
+    gap: 18px;
+}
+
+.container_carusel_item{
+    width: 306px;
+    height: 406px;
+    padding: 0 18px;
+}
+.container_carusel_img{
+    width: 100%;
+    height: 100%;
+}
+.container_carusel_img img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-fit: cover;
+    border-radius: 16px;
+}
