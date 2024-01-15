@@ -1,0 +1,10 @@
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="services icons">
+<mask id="mask0_1080_396" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="44" height="44">
+<rect id="Bounding box" width="44" height="44" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_1080_396)">
+<path id="finance" d="M9.27232 37.5833C8.34624 37.5833 7.56239 37.2625 6.92075 36.6208C6.27909 35.9791 5.95825 35.1952 5.95825 34.2692V5.5H8.70816V34.2692C8.70816 34.4102 8.76693 34.5395 8.88448 34.6571C9.002 34.7746 9.13128 34.8333 9.27232 34.8333H38.0415V37.5833H9.27232ZM12.2692 31.6249V16.6763H17.769V31.6249H12.2692ZM20.9775 31.6249V7.50961H26.4774V31.6249H20.9775ZM29.6858 31.6249V24.0096H35.1857V31.6249H29.6858Z" fill="#290656"/>
+</g>
+</g>
+</svg>
