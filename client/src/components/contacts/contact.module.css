@@ -159,3 +159,7 @@ button[type=submit]:hover {
     background-color: var(--dark-06);
     color: var(--white);
 }
+
+.message{
+    color: green;
+}

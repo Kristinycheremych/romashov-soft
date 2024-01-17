@@ -13,6 +13,8 @@ function ContactsForm() {
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
 
+  const [response, setResponse] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     firebaseDB.child("user").push({
@@ -20,9 +22,12 @@ function ContactsForm() {
       email: email,
       phone: phone
     })
-      .then(() => {
-        alert("Сообщение успешно отправлено")
+      .then((response) => {
+        setResponse(response);
       })
+      // .then(() => {
+      //   alert("Сообщение успешно отправлено")
+      // })
       .catch((error) => {
         alert(error.message)
       })
@@ -53,7 +58,7 @@ function ContactsForm() {
                   <p>borrom.volgodonsk@yandex.ru</p>
                 </div>
                 <div className={style.contacts_right_phone}>
-                  <img src={contactPhone} alt=''/>
+                  <img src={contactPhone} alt='' />
                   <p>+7 (918) 540 75 51</p>
                 </div>
                 <div>
@@ -97,6 +102,17 @@ function ContactsForm() {
                   required
                 ></input>
 
+                <input
+                  type="checkbox"
+                  id="checkbox"
+                  defaultChecked={false}
+                  
+                />
+
+                <label htmlFor="checkbox">Я принимаю соглашение сайта об обработке персональных данных</label>
+                
+                <br></br>
+
                 <button type="submit"></button>
               </form >
 
@@ -105,6 +121,14 @@ function ContactsForm() {
                   <div>Спасибо, что связались с нами.</div>
                 }
               </div> */}
+
+              <div className={style.message}>
+                {response && (
+                  <p>
+                    Данные успешно отправлены
+                  </p>
+                )}
+              </div>
 
             </div>
 
