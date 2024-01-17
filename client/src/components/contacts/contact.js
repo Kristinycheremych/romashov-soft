@@ -13,10 +13,14 @@ function ContactsForm() {
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
 
+  const [agreement, setAgreement] = useState(false)
+
   const [response, setResponse] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(`checked: ${agreement}`);
+
     firebaseDB.child("user").push({
       firstname: firstname,
       email: email,
@@ -31,9 +35,11 @@ function ContactsForm() {
       .catch((error) => {
         alert(error.message)
       })
+
     setFirstname('')
     setEmail('')
     setPhone('')
+    setAgreement('')
   };
 
   return (
@@ -102,33 +108,28 @@ function ContactsForm() {
                   required
                 ></input>
 
-                <input
-                  type="checkbox"
-                  id="checkbox"
-                  defaultChecked={false}
-                  
-                />
+                <div className={style.checkbox}>
+                  <input className={style.pushbutton} type="checkbox"
+                    checked={agreement}
+                    onChange={(e) => setAgreement(e.target.checked)} />
 
-                <label htmlFor="checkbox">Я принимаю соглашение сайта об обработке персональных данных</label>
-                
-                <br></br>
+                  <label> Я принимаю соглашение сайта об обработке <a href='https://store.bezlimit.ru/files/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%B8%D0%B5%20%D1%81%20%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.pdf?ysclid=lri1x4jcjy502783038'>персональных данных</a>.</label>
+                </div>
 
-                <button type="submit"></button>
+                <button type="submit" disabled={!agreement}>Отправить</button>
               </form >
 
-              {/* <div className='sender'>
-                {this.state.sender &&
-                  <div>Спасибо, что связались с нами.</div>
-                }
-              </div> */}
 
-              <div className={style.message}>
-                {response && (
-                  <p>
-                    Данные успешно отправлены
-                  </p>
-                )}
-              </div>
+              {response && (
+                <>
+                  <div className={style.message}>
+                    <p>
+                      Данные успешно отправлены
+                    </p>
+                  </div>
+                </>
+              )}
+
 
             </div>
 
