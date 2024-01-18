@@ -4,6 +4,8 @@ import contactEmail from './images-contact/contact email.svg';
 import contactPhone from './images-contact/contact phone.svg';
 import telegram from './images-contact/contact telegram_icon.svg';
 import vk from './images-contact/contact vk_icon.svg';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import firebaseDB from "./firebase";
 
 
@@ -15,22 +17,31 @@ function ContactsForm() {
 
   const [agreement, setAgreement] = useState(false)
 
-  const [response, setResponse] = useState("");
+  // const [response, setResponse] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(`checked: ${agreement}`);
 
+    // TODO: Разбить на каждую
+    if (!agreement) {
+      toast.error("Требуется согласие");
+    } else {
+      toast.success("Сообщение успешно отправлено");
+    }
+
     firebaseDB.child("user").push({
       firstname: firstname,
       email: email,
-      phone: phone
+      phone: phone,
+      agreement: agreement
     })
-      .then((response) => {
-        setResponse(response);
-      })
+      // .then((response) => {
+      //   setResponse(response);
+      // })
       // .then(() => {
-      //   alert("Сообщение успешно отправлено")
+      //   toast.success("Сообщение успешно отправлено");
+      //   // alert("Сообщение успешно отправлено")
       // })
       .catch((error) => {
         alert(error.message)
@@ -51,6 +62,7 @@ function ContactsForm() {
 
         <section id="contacts">
           <div className={style.container_contacts}>
+            <ToastContainer position="top-right" />
 
             {/* правая часть */}
             <div className={style.contacts_right}>
@@ -120,7 +132,7 @@ function ContactsForm() {
               </form >
 
 
-              {response && (
+              {/* {response && (
                 <>
                   <div className={style.message}>
                     <p>
@@ -128,13 +140,10 @@ function ContactsForm() {
                     </p>
                   </div>
                 </>
-              )}
-
+              )} */}
 
             </div>
-
           </div>
-
         </section >
       </div>
       <div className={style.container_contact_subtract}>

@@ -149,13 +149,13 @@ button[type=submit] {
 
 /* button::before {
     content: "Отправить";
-} */
+}
 
-/* button:hover::before {
+button:hover::before {
     content: "Нанять нас";
-} */
+}
 
-/* button[type=submit]:hover {
+button[type=submit]:hover {
     background-color: var(--dark-06);
     color: var(--white);
 } */
@@ -164,7 +164,7 @@ button:disabled{
     background-color: #797282;
 }
 
-.message{
+/* .message{
     width: 100%;
     padding: 12px 16px;
     background: var(--white);
@@ -177,7 +177,7 @@ button:disabled{
     color: green;
     margin-top: 40px;
     text-align: center;
-}
+} */
 
 .checkbox a{
     color: #fff;
