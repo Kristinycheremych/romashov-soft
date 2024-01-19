@@ -14,19 +14,41 @@ function ContactsForm() {
   const [firstname, setFirstname] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
-
   const [agreement, setAgreement] = useState(false)
 
-  // const [response, setResponse] = useState("");
+  const handleFirstNameChange = (e) => {
+    setFirstname(e.target.value);
+  }
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  }
+  const handlePhoneChange = (e) => {
+    setPhone(e.target.value);
+  }
+  const handleAgreementChange = (e) => {
+    setAgreement(e.target.checked);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     console.log(`checked: ${agreement}`);
 
     // TODO: Разбить на каждую
+
+    if (!firstname) {
+      console.log("Пожалуйста, введите фамилию и имя!");
+    }
+    if (!email) {
+      console.log("Пожалуйста, введите электронную почту!");
+    }
+    if (!phone) {
+      console.log("Пожалуйста, введите номер телефона!");
+    }
     if (!agreement) {
-      toast.error("Требуется согласие");
-    } else {
+      console.log("Требуется соглашение");
+    }
+    else {
       toast.success("Сообщение успешно отправлено");
     }
 
@@ -36,13 +58,6 @@ function ContactsForm() {
       phone: phone,
       agreement: agreement
     })
-      // .then((response) => {
-      //   setResponse(response);
-      // })
-      // .then(() => {
-      //   toast.success("Сообщение успешно отправлено");
-      //   // alert("Сообщение успешно отправлено")
-      // })
       .catch((error) => {
         alert(error.message)
       })
@@ -96,7 +111,7 @@ function ContactsForm() {
                   name="firstname"
                   placeholder="Ромашов Борис"
                   value={firstname}
-                  onChange={(e) => setFirstname(e.target.value)}
+                  onChange={handleFirstNameChange}
                   required
                 />
 
@@ -106,7 +121,7 @@ function ContactsForm() {
                   id="email" name="email"
                   placeholder="yourmail@yandex.ru"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleEmailChange}
                   required
                 />
                 <label htmlFor='message'>Номер телефона</label>
@@ -116,19 +131,21 @@ function ContactsForm() {
                   name="phone"
                   placeholder="+7 (918) 540 75 51"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={handlePhoneChange}
                   required
-                ></input>
+                />
 
                 <div className={style.checkbox}>
                   <input className={style.pushbutton} type="checkbox"
                     checked={agreement}
-                    onChange={(e) => setAgreement(e.target.checked)} />
+                    onChange={handleAgreementChange}
+                    required
+                  />
 
                   <label> Я принимаю соглашение сайта об обработке <a href='https://store.bezlimit.ru/files/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%B8%D0%B5%20%D1%81%20%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.pdf?ysclid=lri1x4jcjy502783038'>персональных данных</a>.</label>
                 </div>
 
-                <button type="submit" disabled={!agreement}>Отправить</button>
+                <button type="submit" >Отправить</button>
               </form >
 
 
