@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import style from './contact.module.css';
 import contactEmail from './images-contact/contact email.svg';
 import contactPhone from './images-contact/contact phone.svg';
@@ -7,77 +7,32 @@ import vk from './images-contact/contact vk_icon.svg';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import firebaseDB from "./firebase";
+import { Formik } from 'formik'
+import * as yup from 'yup'
 
 
 function ContactsForm() {
 
-  const [firstname, setFirstname] = useState("")
-  const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [agreement, setAgreement] = useState(false)
+  const validationsSchema = yup.object().shape({
+    firstname: yup.string().typeError('Должно быть строкой').required('Введите имя и фамилию'),
+    email: yup.string().email('Введите верный email').required('Введите электронную почту'),
+    phone: yup.number().typeError('Должно быть числом').required('Введите номер телефона'),
+    agreement: yup.boolean().required("Обязательно").oneOf([true], 'Требуется согласие')
 
-  const handleFirstnameChange = (e) => {
-    setFirstname(e.target.value);
-  }
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  }
-  const handlePhoneChange = (e) => {
-    setPhone(e.target.value);
-  }
-  const handleAgreementChange = (e) => {
-    setAgreement(e.target.checked);
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log(`checked: ${agreement}`);
-
-    // TODO: Разбить на каждую
-
-    if (!firstname) {
-      console.log("Пожалуйста, введите фамилию и имя!")
-    }
-    if (!email) {
-      console.log("Пожалуйста, введите электронную почту!")
-    }
-    if (!phone) {
-      console.log("Пожалуйста, введите номер телефона!")
-    }
-    if (!agreement) {
-      console.log("Требуется соглашение")
-    }
-    else {
-      toast.success("Сообщение успешно отправлено");
-    }
-
-
-    firebaseDB.child("user").push({
-      firstname: firstname,
-      email: email,
-      phone: phone,
-      agreement: agreement
-    })
-      .catch((error) => {
-        alert(error.message)
-      })
-
-    setFirstname('')
-    setEmail('')
-    setPhone('')
-    setAgreement('')
-  };
+  })
 
   return (
     <>
       <div className={style.container_contact_subtract}>
         <span className={style.contact_subtract_top}></span>
       </div>
+
       <div className={style.bg_contact}>
 
         <section id="contacts">
+
           <div className={style.container_contacts}>
+
             <ToastContainer position="top-right" />
 
             {/* правая часть */}
@@ -101,68 +56,104 @@ function ContactsForm() {
                 </div>
               </div>
             </div>
-
             {/* левая часть */}
             <div className={style.form_box}>
-              <form onSubmit={handleSubmit}>
-                <label htmlFor='firstname'>Ваше имя</label>
-                <input
-                  type="text"
-                  id="firstname"
-                  name="firstname"
-                  placeholder="Ромашов Борис"
-                  value={firstname}
-                  onChange={handleFirstnameChange}
-                  required
-                />
-                 <span className="error"></span>
-                
+              <Formik
 
-                <label htmlFor='email'>Электронная почта</label>
-                <input
-                  type="email"
-                  id="email" name="email"
-                  placeholder="yourmail@yandex.ru"
-                  value={email}
-                  onChange={handleEmailChange}
-                  required
-                />
-                 <span className="error"></span>
-                
+                initialValues={{
+                  firstname: '',
+                  email: '',
+                  phone: '',
+                  agreement: false
+                }}
+                validateOnBlur
+                onSubmit={(values, { resetForm }) => {
+                  toast.success("Сообщение успешно отправлено");
 
-                <label htmlFor='message'>Номер телефона</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="+7 (918) 540 75 51"
-                  value={phone}
-                  onChange={handlePhoneChange}
-                  required
-                />
-                 <span className="error"></span>
+                  firebaseDB.child("user").push({
+                    values
+                  })
+                    .catch((error) => {
+                      alert(error.message)
+                    })
+                  resetForm();
+                }}
+                validationSchema={validationsSchema}
+              >
+                {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isValid, dirty }) => (
+                  <div>
 
-                <div className={style.checkbox}>
-                  <input className={style.pushbutton} type="checkbox"
-                    checked={agreement}
-                    onChange={handleAgreementChange}
-                    required
-                  />
+                    <p>
+                      <label htmlFor='firstname'>Ваше имя</label><br />
+                      <input
+                        type="text"
+                        name='firstname'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.firstname} placeholder="Ромашов Борис"
+                      />
+                    </p>
+                    {touched.firstname && errors.firstname && <p className={style.error}>{errors.firstname}</p>}
 
-                  <label> Я принимаю соглашение сайта об обработке <a href='https://store.bezlimit.ru/files/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%B8%D0%B5%20%D1%81%20%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.pdf?ysclid=lri1x4jcjy502783038'>персональных данных</a>.</label>
-                  <span className="error"></span>
-                </div>
+                    <p>
+                      <label htmlFor='email'>Электронная почта</label><br />
+                      <input
+                        type="email"
+                        name='email'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.email} placeholder="yourmail@yandex.ru"
+                      />
+                    </p>
+                    {touched.email && errors.email && <p className={style.error}>{errors.email}</p>}
 
-                <button type="submit" >Отправить</button>
-              </form >
+                    <p>
+                      <label htmlFor='phone'>Номер телефона</label><br />
+                      <input
+                        type="text"
+                        name='phone'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.phone}
+                        placeholder="+7 (918) 540 75 51"
+                      />
+                    </p>
 
+                    {touched.phone && errors.phone && <p className={style.error}>{errors.phone}</p>}
+                    <div className={style.checkbox}>
+                      <label htmlFor='agreement'>
+                        <input
+                          type="checkbox"
+                          name='agreement'
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          value={values.agreement}
+                          checked={values.agreement}
+                        />
+                        Я принимаю соглашение сайта об обработке <a href='https://store.bezlimit.ru/files/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%B8%D0%B5%20%D1%81%20%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8.pdf?ysclid=lri1x4jcjy502783038'>персональных данных</a>.
+                      </label>
+                    </div>
+
+                    {touched.agreement && errors.agreement && <p className={style.error}>{errors.agreement}</p>}
+
+                    <button
+                      disabled={!isValid && !dirty}
+                      onClick={handleSubmit}
+                      type="submit"
+                    >Отправить</button>
+
+                  </div>
+                )}
+              </Formik>
             </div>
+
           </div>
-        </section >
+        </section>
       </div>
       <div className={style.container_contact_subtract}>
         <span className={style.contact_subtract_bottom}></span>
       </div>
+
     </>
   )
 }

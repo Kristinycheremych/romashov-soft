@@ -134,11 +134,10 @@ textarea {
 button[type=submit] {
     width: 136px;
     height: 48px;
-    margin-top: 40px;
+    margin-top: 20px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 12px 28px;
     background-color: #130538;
     color: var(--accent);
     border-radius: 48px;
@@ -160,9 +159,9 @@ button[type=submit]:hover {
     color: var(--white);
 } */
 
-button:disabled{
+/* button:disabled{
     background-color: #797282;
-}
+} */
 
 /* .message{
     width: 100%;
@@ -178,7 +177,9 @@ button:disabled{
     margin-top: 40px;
     text-align: center;
 } */
-
+.checkbox{
+    padding: 0 0 15px;
+}
 .checkbox a{
     color: #fff;
 }
@@ -188,3 +189,7 @@ button:disabled{
     height: 14px;
 }
 
+.error{
+    padding: 1px 0 15px;
+    color: rgba(255, 0, 0, 0.664);
+}
