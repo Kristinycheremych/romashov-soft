@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import style from './hero-section.module.css';
-
+import { Link } from "react-scroll";
 
 export class Main extends Component {
+
+
   render() {
     return (
       <>
@@ -12,7 +14,9 @@ export class Main extends Component {
             <p>Это текст, призывающий нажать на кнопку и нанять нашу команду
               для разработки мобильного приложения для вашего бизнеса</p>
             <div>
-              Заказать работу
+              <Link smooth spy to="contacts" >
+                Заказать работу
+              </Link>
             </div>
           </div>
         </div>
