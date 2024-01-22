@@ -4,8 +4,9 @@
     text-align: center;
     margin-bottom: 56px;
 }
-.header_services p{
-    color: var(--dark, #0A031F);
+
+.header_services p {
+    color: var(--dark);
 }
 
 .card_services {
@@ -16,6 +17,7 @@
     margin: 0 auto;
     gap: 36px;
 }
+
 .card_services_item {
     max-width: 420px;
     text-align: center;
@@ -25,7 +27,8 @@
     background: #FFF;
     box-shadow: 0px 4px 10px 0px rgba(99, 51, 235, 0.10);
 }
-.card_services_item:hover{
+
+.card_services_item:hover {
     border: 1px solid var(--primaryDark);
 }
 
@@ -37,16 +40,18 @@
     justify-content: center;
     align-items: center;
     border: 1px solid var(--border);
-    background: var(--white, #FFF);
+    background: var(--white);
     border-radius: 84px;
     margin-bottom: 24px;
 }
+
 .card_services_information h3 {
     color: var(--accent);
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
-    line-height: 24px;/* 133.333% */
+    line-height: 24px;
+    /* 133.333% */
     margin-bottom: 16px;
 }
 
@@ -57,5 +62,6 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;/* 150% */
+    line-height: 24px;
+    /* 150% */
 }

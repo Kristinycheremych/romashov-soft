@@ -20,7 +20,7 @@ const Services = () => {
 
                     <div className={style.card_services_item}>
                         <div className={style.card_services_img}>
-                            <img src={phone} alt=""/>
+                            <img src={phone} alt="" />
                         </div>
                         <div className={style.card_services_information}>
                             <h3>Мобильные приложения</h3>
@@ -32,7 +32,7 @@ const Services = () => {
 
                     <div className={style.card_services_item}>
                         <div className={style.card_services_img}>
-                            <img src={design} alt=""/>
+                            <img src={design} alt="" />
                         </div>
                         <div className={style.card_services_information}>
                             <h3>Дизайн интерфейса</h3>
@@ -44,7 +44,7 @@ const Services = () => {
 
                     <div className={style.card_services_item}>
                         <div className={style.card_services_img}>
-                            <img src={technical} alt=""/>
+                            <img src={technical} alt="" />
                         </div>
                         <div className={style.card_services_information}>
                             <h3>Техническая поддержка</h3>
@@ -55,7 +55,7 @@ const Services = () => {
                     </div>
                     <div className={style.card_services_item}>
                         <div className={style.card_services_img}>
-                            <img src={veb} alt=""/>
+                            <img src={veb} alt="" />
                         </div>
                         <div className={style.card_services_information}>
                             <h3>Web-разработка</h3>
@@ -67,7 +67,18 @@ const Services = () => {
 
                     <div className={style.card_services_item}>
                         <div className={style.card_services_img}>
-                            <img src={seo} alt=""/>
+                            <img src={seo} alt="" />
+                        </div>
+                        <div className={style.card_services_information}>
+                            <h3>SEO-оптимизация</h3>
+                            <p>
+                                Поможем повысить конверсию вашего мобильного приложения или сайта
+                            </p>
+                        </div>
+                    </div>
+                    <div className={style.card_services_item}>
+                        <div className={style.card_services_img}>
+                            <img src={seo} alt="" />
                         </div>
                         <div className={style.card_services_information}>
                             <h3>SEO-оптимизация</h3>
@@ -79,7 +90,7 @@ const Services = () => {
                 </div>
 
 
-              
+
             </section>
         </>
     )

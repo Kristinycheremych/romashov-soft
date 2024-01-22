@@ -1,46 +1,14 @@
-.container_contact_subtract {
-    position: relative;
-    width: 100%;
-    height: 80px;
-}
-
-.contact_subtract_top {
-    content: '';
-    position: absolute;
-    padding-top: 5%;
-    background: linear-gradient(to left bottom, transparent 49.5%, #290656 50%) left / 50.025% 100% no-repeat,
-        linear-gradient(to right bottom, transparent 49.5%, #290656 50%) right / 50.025% 100% no-repeat;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-.contact_subtract_bottom {
-    content: '';
-    position: absolute;
-    padding-top: 5%;
-    background: linear-gradient(to right top, transparent 49.5%, #290656 50%) left / 50.025% 100% no-repeat,
-        linear-gradient(to left top, transparent 49.5%, #290656 50%) right / 50.025% 100% no-repeat;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
 .bg_contact {
     width: 100%;
     background: var(--accent, #290656);
 }
 
-#contacts {
-    width: min(100% - 25px, 1440px);
-    margin: 0 auto;
-}
 
 .container_contacts {
     display: flex;
     flex-wrap: wrap;
     gap: 2.25rem;
-    padding: 64px 0 64px 0;
+    padding: 112px 0 112px 0;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -134,10 +102,11 @@ textarea {
 button[type=submit] {
     width: 136px;
     height: 48px;
-    margin-top: 20px;
+    margin-top: 15px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    padding: 12px 28px;
     background-color: #130538;
     color: var(--accent);
     border-radius: 48px;
@@ -177,9 +146,7 @@ button[type=submit]:hover {
     margin-top: 40px;
     text-align: center;
 } */
-.checkbox{
-    padding: 0 0 15px;
-}
+
 .checkbox a{
     color: #fff;
 }
@@ -187,6 +154,9 @@ button[type=submit]:hover {
 .pushbutton{
     width: 14px;
     height: 14px;
+}
+.checkbox{
+    padding: 0 0 15px;
 }
 
 .error{

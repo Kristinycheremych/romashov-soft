@@ -23,9 +23,6 @@ function ContactsForm() {
 
   return (
     <>
-      <div className={style.container_contact_subtract}>
-        <span className={style.contact_subtract_top}></span>
-      </div>
 
       <div className={style.bg_contact}>
 
@@ -150,9 +147,7 @@ function ContactsForm() {
           </div>
         </section>
       </div>
-      <div className={style.container_contact_subtract}>
-        <span className={style.contact_subtract_bottom}></span>
-      </div>
+    
 
     </>
   )

@@ -24,9 +24,9 @@ a {
 :root {
     --white: #FFF;
     --accent: #290656;
-    --dark: #0A031F;
+    --dark: #4A4754;
     --dark-06: #797282;
-    --border: #D9D9E3;
+    --border: #DFD9E3;
     --bg: #FDFCFF;
     --primaryDark: #AA98DB;
 }
@@ -56,7 +56,17 @@ h2 {
     padding: 64px 0 64px 0;
 }
 
+
+#contacts {
+    width: min(100% - 25px, 1440px);
+    margin: 0 auto;
+}
 #services{
+    width: min(100% - 25px, 1440px);
+    margin: 0 auto;
+    padding: 64px 0 64px 0;
+}
+#prices{
     width: min(100% - 25px, 1440px);
     margin: 0 auto;
     padding: 64px 0 64px 0;
