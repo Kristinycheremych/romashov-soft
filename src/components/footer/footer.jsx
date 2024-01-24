@@ -12,13 +12,13 @@ const Footer = () => {
                     <nav className={style.menu_footer}>
                         <ul>
                             <li>
-                                <Link smooth spy to="about">
-                                    О нас
+                                <Link smooth spy to="services">
+                                    Услуги
                                 </Link>
                             </li>
                             <li>
-                                <Link smooth spy to="services">
-                                    Услуги
+                                <Link smooth spy to="prices">
+                                    Стоимость работ
                                 </Link>
                             </li>
                             <li>

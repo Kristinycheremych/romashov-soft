@@ -15,7 +15,9 @@ export class Main extends Component {
               для разработки мобильного приложения для вашего бизнеса</p>
             <div>
               <Link smooth spy to="contacts" >
-                Заказать работу
+                <button className={style.hero_section_button} type='submit'>
+                  Заказать работу
+                </button>
               </Link>
             </div>
           </div>

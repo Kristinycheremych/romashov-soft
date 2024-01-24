@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './prices.module.css';
 import check from './images-prices/check.svg';
+import { Link } from "react-scroll";
 
 const Prices = () => {
     return (
@@ -22,17 +23,24 @@ const Prices = () => {
                             <img src={check} alt="" />
                             <p>Разработка дизайна “под ключ”</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Адаптивные версии</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Мы создаем мобильные</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Мы создаем мобильные</p>
+                        </div>
+                        <div className={style.alignment_button}>
+                            <Link smooth spy to="contacts" >
+                                <button className={style.prices_button} type='submit'>
+                                    Заказать работу
+                                </button>
+                            </Link>
                         </div>
                     </div>
 
@@ -45,17 +53,24 @@ const Prices = () => {
                             <img src={check} alt="" />
                             <p>Разработка дизайна “под ключ”</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Адаптивные версии</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Мы создаем мобильные</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Мы создаем мобильные</p>
+                        </div>
+                        <div className={style.alignment_button}>
+                            <Link smooth spy to="contacts" >
+                                <button className={style.prices_button} type='submit'>
+                                    Заказать работу
+                                </button>
+                            </Link>
                         </div>
                     </div>
 
@@ -68,17 +83,24 @@ const Prices = () => {
                             <img src={check} alt="" />
                             <p>Разработка дизайна “под ключ”</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Адаптивные версии</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Мы создаем мобильные</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Мы создаем мобильные</p>
+                        </div>
+                        <div className={style.alignment_button}>
+                            <Link smooth spy to="contacts" >
+                                <button className={style.prices_button} type='submit'>
+                                    Заказать работу
+                                </button>
+                            </Link>
                         </div>
                     </div>
 
@@ -91,17 +113,24 @@ const Prices = () => {
                             <img src={check} alt="" />
                             <p>Разработка дизайна “под ключ”</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Адаптивные версии</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Мы создаем мобильные</p>
                         </div>
-                        <div  className={style.card_list_item}>
+                        <div className={style.card_list_item}>
                             <img src={check} alt="" />
                             <p>Мы создаем мобильные</p>
+                        </div>
+                        <div className={style.alignment_button}>
+                            <Link smooth spy to="contacts" >
+                                <button className={style.prices_button} type='submit'>
+                                    Заказать работу
+                                </button>
+                            </Link>
                         </div>
                     </div>
 

@@ -36,3 +36,19 @@
     /* 140% */
     padding: 40px 0 32px 0;
 }
+
+.hero_section_button{
+    width: 263px;
+    height: 60px;
+    font-size: 20px;
+    margin-top: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 28px;
+    color: var(--white, #FFF);
+    border-radius: 48px;
+    border: 2px solid var(--accent_copy);
+    background: var(--accent_copy, #FA9232);
+    cursor: pointer;
+}

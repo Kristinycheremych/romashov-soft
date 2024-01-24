@@ -16,9 +16,8 @@ function ContactsForm() {
   const validationsSchema = yup.object().shape({
     firstname: yup.string().typeError('Должно быть строкой').required('Введите имя и фамилию'),
     email: yup.string().email('Введите верный email').required('Введите электронную почту'),
-    phone: yup.number().typeError('Должно быть числом').required('Введите номер телефона'),
+    phone: yup.string().required('Введите номер телефона'),
     agreement: yup.boolean().required("Обязательно").oneOf([true], 'Требуется согласие')
-
   })
 
   return (
@@ -133,7 +132,7 @@ function ContactsForm() {
 
                     {touched.agreement && errors.agreement && <p className={style.error}>{errors.agreement}</p>}
 
-                    <button
+                    <button className={style.contatct_button}
                       disabled={!isValid && !dirty}
                       onClick={handleSubmit}
                       type="submit"

@@ -32,16 +32,16 @@ const Navbar = () => {
                                 nav ? [style.menu, style.active].join(' ') : [style.menu]
                             }
                         >
-                            {/* <li>
-                                <Link activeClass={style.actives} smooth spy to="about" onClick={() => {
-                                    closeMenu()}}>
-                                    О нас
-                                </Link>
-                            </li> */}
                             <li>
                                 <Link activeClass={style.actives} smooth spy to="services"  onClick={() => {
                                     closeMenu()}}>
                                     Услуги
+                                </Link>
+                            </li>
+                            <li>
+                                <Link activeClass={style.actives} smooth spy to="prices"  onClick={() => {
+                                    closeMenu()}}>
+                                    Стоимость работ
                                 </Link>
                             </li>
                             <li>
