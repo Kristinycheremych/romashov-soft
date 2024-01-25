@@ -133,8 +133,6 @@ const Prices = () => {
                             </Link>
                         </div>
                     </div>
-
-
                 </div>
             </section>
         </>

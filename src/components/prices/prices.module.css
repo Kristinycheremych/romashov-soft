@@ -64,15 +64,36 @@
     margin-bottom: 8px;
 }
 
+.card_prices_item:hover{
+    border: 1px solid var(--primaryDark);
+}
+
 .card_list_item img {
     margin-right: 10px;
 }
 
 .alignment_button {
-    padding: 30px 40px 40px 40px;
+    text-align: center;
+    padding: 30px;
 }
 
 .prices_button {
+    width: 177px;
+    height: 48px;
+    font-size: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 28px;
+    color: var(--white, #FFF);
+    border-radius: 48px;
+    color: var(--accent, #290656);
+    border: 1px solid var(--border, #DFD9E3);
+    background: var(--white, #FFF);
+    cursor: pointer;
+}
+
+.prices_button:hover {
     width: 177px;
     height: 48px;
     font-size: 15px;
