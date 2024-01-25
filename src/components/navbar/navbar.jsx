@@ -51,17 +51,17 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link activeClass={style.actives} smooth spy to="questions" onClick={() => {
+                                <Link activeClass={style.actives} smooth spy to="accordion" onClick={() => {
                                     closeMenu()}}>
                                     Частые вопросы
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link activeClass={style.actives} smooth spy to="reviews" onClick={() => {
                                     closeMenu()}}>
                                     Отзывы
                                 </Link>
-                            </li>
+                            </li> */}
                         </ul>
 
                         <div onClick={() => setNav(!nav)} className={style.mobile_btn}>

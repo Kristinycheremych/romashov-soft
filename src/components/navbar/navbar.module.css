@@ -29,7 +29,7 @@
 .box {
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    color: var(--white, #FFF);
 }
 
 .menu {

@@ -164,3 +164,7 @@ button[type=submit]:hover {
     padding: 1px 0 15px;
     color: rgba(255, 0, 0, 0.664);
 }
+
+input[type=checkbox]{
+    margin-right: 5px;
+}

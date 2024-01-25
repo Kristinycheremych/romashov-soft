@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
 .header_questions {
     max-width: 648px;
     margin: 0 auto;
@@ -42,6 +40,14 @@
 
 .accordion_header:hover {
     border: 1px solid #AA98DB;
+}
+
+.accordion_text {
+    color: var(--dark-06, #797282);
+}
+
+.accordion_text:hover {
+    color: var(--accent, #290656);
 }
 
 .accordion_collapse {

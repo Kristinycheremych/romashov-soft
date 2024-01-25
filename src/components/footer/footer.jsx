@@ -27,15 +27,15 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link smooth spy to="questions">
+                                <Link smooth spy to="accordion">
                                     Частые вопросы
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link smooth spy to="reviews">
                                     Отзывы
                                 </Link>
-                            </li>
+                            </li> */}
                         </ul>
 
                         <div className={style.social}>

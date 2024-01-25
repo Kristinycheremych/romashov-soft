@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { ReactComponent as CrossOpen } from './images-questions/crossOpen.svg';
+import { ReactComponent as CrossOpen } from './images-accordion/crossOpen.svg';
 import style from './accordion.module.css'
 
 export const AccordionItem = ({ data, onClick, isOpen }) => {
@@ -11,8 +11,10 @@ export const AccordionItem = ({ data, onClick, isOpen }) => {
             <div className={style.wrapper}>
                 <li className={style.accordion_item}>
                     <button className={style.accordion_header} onClick={() => onClick()}>
-                    <CrossOpen className={`accordion_arrow ${isOpen ? "active" : ""}`} />
-                        {data.question}
+                        <CrossOpen className={`accordion_arrow ${isOpen ? "active" : ""}`} />
+                        <div className={style.accordion_text}>
+                            <p>{data.question}</p>
+                        </div>
 
                         <div className={style.accordion_collapse}
                             style={isOpen ? { height: itemRef.current.scrollHeight } : { height: "0px" }}>
@@ -21,7 +23,7 @@ export const AccordionItem = ({ data, onClick, isOpen }) => {
                                 {data.answer}
                             </div>
                         </div>
-
+                        
                     </button>
                 </li>
             </div>
